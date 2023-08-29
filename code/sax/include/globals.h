@@ -1,13 +1,3 @@
-//
-//  defines.h
-//  isaxlib
-//
-//  Created by Kostas Zoumpatianos on 3/19/12.
-//  Copyright 2012 University of Trento. All rights reserved.
-//
-
-
-
 #include "bitset"
 #include "config.h"
 #include "iostream"
@@ -19,19 +9,19 @@
 #define isax_globals_h
 
 
-// 0, 1, 2  ， ，
+
 #define istime 0
-// saxt 0 1
+
 #define iscount_saxt_for_exact 0
-//  0 1
+
 #define isgreed 1
-// print
+
 #define isprint 1
-// 0, 1, 2  ，，
+
 #define lookupi 2
-// st
+
 #define init_st 1
-//，1，0
+
 #define cha 0
 
 #define Get_div 20
@@ -54,23 +44,23 @@ typedef unsigned char sax_type;
 #endif
 
 
-#define build_batch_size 20 //GB
+#define build_batch_size 20
 #define is_build_m 0
 #define is_query_m 1
 #define is_reorder_m 1
 
-//exp5
-#define dataset_type 3 // 0: ; 1: shift; 2: deep; 3: glove
-#define exp5_use_tree 1  // exp5.cpp,0: b_binary, 1: i_binary, 2: btree, 3:sigtree
-#define btree_use_bsax 0 // b+bsax,1bsax,0isax
+
+#define dataset_type 3
+#define exp5_use_tree 1
+#define btree_use_bsax 0
 #if dataset_type
-#define daxiao 1 // 016， 132
+#define daxiao 1
 #else
 #define daxiao 0
 #endif
 
 
-//16，8char
+
 #if daxiao
 typedef unsigned int saxt_type;
 #else
@@ -85,7 +75,7 @@ typedef unsigned char cod;
 
 #if  dataset_type == 3
 #define TS_LENGTH 96
-#define TOTAL_TS 1000000    // 
+#define TOTAL_TS 1000000
 #elif dataset_type == 2
 #define TS_LENGTH 96
 #define TOTAL_TS 99974603  // 
@@ -99,7 +89,7 @@ typedef unsigned char cod;
 //#define TOTAL_TS 1000000  // 
 #endif
 
-#define READ_TS_BATCH 1000000   //  
+#define READ_TS_BATCH 1000000
 
 
 #define LEAF_MAX_NUM 100
@@ -110,42 +100,42 @@ typedef unsigned char cod;
 #define SEGMENTS 16
 
 #endif
-#define NUM_PER_SEGMENT (TS_LENGTH / SEGMENTS)    // ts_length / segments
+#define NUM_PER_SEGMENT (TS_LENGTH / SEGMENTS)
 
 #if dataset_type
-#define K 1  // k
+#define K 1
 #else
 #define K 100  // k
 #endif
 
 #if dataset_type == 3
-#define num_approximate_search_nodes 10 // b+
+#define num_approximate_search_nodes 10
 #else
 #define num_approximate_search_nodes 500 // b+
 #endif
 
 
-#define NUM_SEARCH 100 // 
+#define NUM_SEARCH 100
 
 
 
 #define binary_tree_root_full 0 // 2^segment
 #define num_approximate_search_key (num_approximate_search_nodes * LEAF_MAX_NUM) // key
-#define b_binary_use_breakpoint_to_split 0 // bsax,1breakpoint，0sax
+#define b_binary_use_breakpoint_to_split 0
 
-//#define sort_strategy 2 // 0p,1,2(SBB),batchp(SBS)
-//#define sort_batch_num 10 // 2,batch
+//#define sort_strategy 2
+//#define sort_batch_num 10
 
-#define sigtree_leaf_keys_use_vector 1    // sigtreeleaf_key，vector，
-#define sigtree_delay_create_leafnode 1    // sigtreeleafnodesaxt，，childrenmap
+#define sigtree_leaf_keys_use_vector 1
+#define sigtree_delay_create_leafnode 1
 
 
-#define exp2_binary_use_isax 0  // exp2_binary.cppi_binaryb_binary
+#define exp2_binary_use_isax 0
 
-#define exp3_use_tree 0 // exp3.cpp,0: b_binary, 1: i_binary, 2: btree
-#define exp3_b_binary_use_isax_to_prune 0 //  exp3b_binaryisax
-#define exp3_i_binary_use_bsax_to_prune 0 //  exp3i_binarybsax
-#define exp3_write_index_ans 1    // exp3sax
+#define exp3_use_tree 0
+#define exp3_b_binary_use_isax_to_prune 0
+#define exp3_i_binary_use_bsax_to_prune 0
+#define exp3_write_index_ans 1
 
 
 #if is_query_m
@@ -155,8 +145,8 @@ typedef unsigned char cod;
 #define sort_batch_num 5 // 2,batch
 #define is_use_m 1
 #else
-#define sort_strategy 0 // 0p,1,2(SBB),batchp(SBS)
-#define sort_batch_num 2 // 2,batch
+#define sort_strategy 0
+#define sort_batch_num 2
 #define is_use_m 0
 #endif
 
